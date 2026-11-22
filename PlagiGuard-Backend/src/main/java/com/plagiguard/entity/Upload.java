@@ -36,7 +36,7 @@ public class Upload {
     @JoinColumn(name = "user_id")
     private PgUser user;
     
-    @Column(name = "file_data", columnDefinition = "LONGBLOB")
+    @Column(name = "file_data", columnDefinition = "BYTEA")
     private byte[] fileData;
 
     public Upload() {

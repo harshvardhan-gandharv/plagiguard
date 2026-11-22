@@ -1,2 +1,6 @@
-# Python virtual environment
-venv/
+# Python virtual environments
+.venv/
+.venv-ai/
+
+# Editor settings
+.vscode/

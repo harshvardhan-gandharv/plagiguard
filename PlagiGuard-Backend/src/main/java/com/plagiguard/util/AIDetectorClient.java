@@ -20,17 +20,17 @@ public class AIDetectorClient {
     private static final int RETRY_DELAY_MS = 2000;
     
     // Set the AI microservice URL as a constant for deployment
-    private final String AI_API_URL = "https://plagiguard-production.up.railway.app";
+    // private final String AI_API_URL = "${AI_MODEL}";
     private final String aiDetectorUrl;
     private final RestTemplate restTemplate;
     
     public AIDetectorClient(
-        @Value("${ai.detector.url:https://plagiguard-production.up.railway.app}") String aiDetectorUrl,
+        @Value("${AI_MODEL:}") String aiDetectorUrl,
         RestTemplate restTemplate
     ) {
         // Use the constant if not running locally
-        if (AI_API_URL.startsWith("http")) {
-            this.aiDetectorUrl = AI_API_URL + "/detect";
+        if (aiDetectorUrl.startsWith("http")) {
+            this.aiDetectorUrl = aiDetectorUrl + "/detect";
         } else {
             this.aiDetectorUrl = aiDetectorUrl + "/detect";
         }
