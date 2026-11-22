@@ -43,7 +43,7 @@ def load_model_with_retry():
             time.sleep(RETRY_DELAY)
 
 # Load the model and tokenizer
-MODEL_NAME = "roberta-base-openai-detector"
+MODEL_NAME = "ViolentlyPurple/Detect-AI"
 try:
     tokenizer, model = load_model_with_retry()
 except Exception as e:
